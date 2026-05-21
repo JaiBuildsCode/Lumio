@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import SpinLogo from './SpinLogo'
 import { motion } from 'framer-motion'
 import { FiCheck } from 'react-icons/fi'
 
@@ -103,31 +104,21 @@ export default function Pricing() {
                     : 'border-border-base bg-bg-surface shadow-dashboard hover:shadow-glow-green'
                 } p-8`}
               >
-                {/* Rotating gradient border for Pro plan */}
+                {/* Professional highlight for Pro plan */}
                 {plan.highlight && (
-                  <motion.div
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
-                    className="absolute inset-0 rounded-2xl pointer-events-none overflow-hidden"
-                    style={{
-                      background: `conic-gradient(from 180deg at 50% 50%, #4ADE80, #22D3EE, #4ADE80)`,
-                      padding: '1px',
-                    }}
-                  >
-                    <div className="absolute inset-1 bg-bg-surface rounded-2xl" />
-                  </motion.div>
+                  <div className="absolute -inset-0.5 rounded-2xl pointer-events-none" aria-hidden>
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-transparent to-accent-green/6 blur-md opacity-90" />
+                    <div className="absolute inset-0 rounded-2xl border border-accent-green/20 shadow-[0_20px_60px_rgba(34,211,238,0.06)]" />
+                  </div>
                 )}
 
                 <div className={`relative z-10 ${plan.highlight ? 'bg-bg-surface rounded-xl p-6 -m-6' : ''}`}>
                   {plan.highlight && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20">
-                      <motion.span
-                        animate={{ scale: [1, 1.05, 1] }}
-                        transition={{ duration: 2, repeat: Infinity }}
-                        className="inline-flex rounded-full bg-accent-green text-bg-base px-3 py-1 text-xs font-bold uppercase tracking-wide"
-                      >
-                        Most Popular
-                      </motion.span>
+                    <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2">
+                      <SpinLogo size={18} />
+                      <div className="inline-flex items-center gap-2 bg-bg-surface/80 px-3 py-1 rounded-full border border-accent-green/30">
+                        <span className="text-xs font-semibold text-accent-green uppercase">Most Popular</span>
+                      </div>
                     </div>
                   )}
 

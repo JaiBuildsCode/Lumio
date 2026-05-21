@@ -334,8 +334,12 @@ export default function Hero() {
                 {/* Logo */}
                 <div className="p-6 border-b border-border-base">
                   <div className="flex items-center gap-2">
-                    <div className="w-6 h-6 bg-accent-green rounded-md flex items-center justify-center">
-                      <span className="text-bg-base text-xs font-bold">L</span>
+                    <div className="w-8 h-8 flex items-center justify-center">
+                      <span className="spin-slow inline-flex items-center justify-center" style={{ width: 18, height: 18 }}>
+                        <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M12 2L18 12L12 22L6 12Z" fill="#4ADE80" />
+                        </svg>
+                      </span>
                     </div>
                     <span className="text-text-primary font-semibold text-sm">Lumio</span>
                   </div>

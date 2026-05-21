@@ -77,6 +77,15 @@ a {
     background-size: 48px 48px;
     opacity: 0.5;
   }
+
+  /* Spinning logo */
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .spin-slow { animation: spin-slow 6s linear infinite; }
+
   
   .text-hero {
     font-family: 'Inter', sans-serif;

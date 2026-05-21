@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { FiMenu, FiX } from 'react-icons/fi'
 import { motion } from 'framer-motion'
+import SpinLogo from './SpinLogo'
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -20,6 +21,7 @@ export default function Navbar() {
         <div className="mx-auto max-w-7xl h-full px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo + brand */}
           <a href="#" className="flex items-center gap-3 font-semibold text-base text-text-primary">
+            <SpinLogo size={20} />
             <span className="hidden sm:inline-block">Lumio</span>
           </a>
 

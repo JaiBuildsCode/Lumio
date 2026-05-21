@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { FiCheck } from 'react-icons/fi'
+import SpinLogo from './SpinLogo'
 
 export default function CtaBanner() {
   return (
@@ -25,9 +26,12 @@ export default function CtaBanner() {
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-5xl sm:text-6xl font-bold leading-tight text-white mb-6">
-            Ready to see clearly?
-          </h2>
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <SpinLogo size={26} />
+            <h2 className="text-4xl sm:text-5xl font-bold leading-tight text-white">
+              Ready to see clearly?
+            </h2>
+          </div>
           <p className="text-lg text-white/70 mb-10 max-w-2xl mx-auto">
             Join thousands of teams transforming raw data into actionable decisions. Start your free 14-day trial today.
           </p>
