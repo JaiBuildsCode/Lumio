@@ -12,7 +12,6 @@ Lumio is a contemporary landing page designed to showcase products and services 
 
 - **Modern Design System** – Clean, professional interface with consistent styling
 - **Responsive Layout** – Fully responsive design optimized for all devices
-- **Performance Optimized** – Lightning-fast load times with Vite's optimized bundling
 - **Interactive Components** – Engaging hero section, feature showcases, and testimonials
 - **Pricing Section** – Clear pricing tiers with call-to-action buttons
 - **FAQ Section** – Comprehensive FAQ with smooth interactions
@@ -131,9 +130,6 @@ This project follows professional development standards:
 - **Component-based architecture** for maintainability
 - **Motion variants library** for consistent animations
 
-## Contributing
-
-Contributions are welcome! Feel free to open issues and submit pull requests to improve the project.
 
 ## Developer
 
@@ -149,5 +145,4 @@ Solo Developer & Full-Stack Engineer
 This project is open source and available under the MIT License.
 
 ---
-
-**Made with ❤️ by [Jai](https://github.com/JaiBuildsCode)**
+(https://github.com/JaiBuildsCode)

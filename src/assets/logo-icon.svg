@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="512" height="512" role="img" aria-labelledby="titleDesc">
+  <title id="titleDesc">Lumio — icon</title>
+  <desc>Minimal circular icon with an L mark — designed for clear visibility at small sizes.</desc>
+  <defs>
+    <linearGradient id="lg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#6366F1"/>
+      <stop offset="1" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+  <rect width="100" height="100" rx="18" fill="url(#lg)"/>
+  <path d="M34 28v36h28" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
