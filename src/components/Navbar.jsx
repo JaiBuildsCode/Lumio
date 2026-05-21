@@ -15,40 +15,29 @@ export default function Navbar() {
   }, [])
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 h-15">
-      <nav className={`h-full bg-bg-surface/80 border-b border-border-base backdrop-blur-xl transition-shadow duration-300 ${scrolled ? 'shadow-[0_1px_0_#1E1E1E]' : ''}`}>
-        <div className="mx-auto max-w-7xl h-full px-6 lg:px-8 flex items-center justify-between">
-          {/* Logo */}
-          <a href="#" className="flex items-center gap-2 font-bold text-lg text-text-primary">
-            <motion.svg
-              className="w-[18px] h-[18px] text-accent-green"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              animate={{ rotate: [0, 360] }}
-              transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-            >
-              <path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z" />
-            </motion.svg>
-            Lumio
+    <header className="fixed inset-x-0 top-0 z-50">
+      <nav className={`h-16 bg-gradient-to-b from-black/60 via-bg-surface/40 to-transparent border-b border-border-base backdrop-blur-md transition-shadow duration-300 ${scrolled ? 'shadow-xl' : ''}`}>
+        <div className="mx-auto max-w-7xl h-full px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+          {/* Logo + brand */}
+          <a href="#" className="flex items-center gap-3 font-semibold text-base text-text-primary">
+            <span className="hidden sm:inline-block">Lumio</span>
           </a>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-12 text-sm font-medium">
+          <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
             {['Features', 'Pricing', 'Testimonials', 'Blog'].map((item) => (
               <motion.a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="text-text-secondary hover:text-text-primary transition-colors duration-150 ease-premium relative"
-                whileHover="hover"
-                initial="initial"
+                className="text-text-secondary hover:text-text-primary transition-colors duration-150 ease-premium relative px-2 py-1 rounded-md"
+                whileHover={{ y: -2 }}
+                initial={false}
               >
-                {item}
-                <motion.div
-                  className="absolute bottom-0 left-0 h-px bg-accent-green"
-                  variants={{
-                    initial: { width: 0 },
-                    hover: { width: '100%' }
-                  }}
+                <span className="relative z-10">{item}</span>
+                <motion.span
+                  className="absolute left-1/2 -translate-x-1/2 bottom-0 h-0.5 rounded-full bg-accent-green"
+                  initial={{ width: 0 }}
+                  whileHover={{ width: '60%' }}
                   transition={{ duration: 0.2 }}
                 />
               </motion.a>
@@ -59,11 +48,11 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-4">
             <a
               href="#"
-              className="text-text-secondary hover:text-text-primary transition-colors duration-150 ease-premium"
+              className="text-text-secondary hover:text-text-primary transition-colors duration-150 ease-premium text-sm"
             >
               Log in
             </a>
-            <button className="bg-accent-green text-bg-base font-bold text-sm rounded-lg hover:brightness-110 shadow-glow-green transition-all duration-150 hover:scale-105 ease-premium px-5 py-2.5">
+            <button className="bg-accent-green text-bg-base font-semibold text-sm rounded-md hover:brightness-105 shadow-glow-green transition-all duration-150 px-4 py-2">
               Get Started
             </button>
           </div>
@@ -71,10 +60,10 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden text-text-primary"
+            className="md:hidden text-text-primary p-2 rounded-md hover:bg-bg-elevated"
             aria-label="Toggle menu"
           >
-            {mobileOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+            {mobileOpen ? <FiX size={20} /> : <FiMenu size={20} />}
           </button>
         </div>
       </nav>
@@ -82,27 +71,27 @@ export default function Navbar() {
       {/* Mobile menu */}
       {mobileOpen && (
         <motion.div
-          initial={{ opacity: 0, y: -10 }}
+          initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          className="md:hidden bg-bg-surface border-b border-border-base"
+          exit={{ opacity: 0, y: -8 }}
+          className="md:hidden bg-bg-surface/95 border-b border-border-base backdrop-blur-md"
         >
-          <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-4">
+          <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-3">
             {['Features', 'Pricing', 'Testimonials', 'Blog'].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="text-text-secondary hover:text-text-primary py-2"
+                className="text-text-secondary hover:text-text-primary py-2 px-2 rounded-md"
                 onClick={() => setMobileOpen(false)}
               >
                 {item}
               </a>
             ))}
-            <div className="pt-4 border-t border-border-base space-y-3">
+            <div className="pt-3 border-t border-border-base space-y-3">
               <a href="#" className="block text-text-secondary hover:text-text-primary">
                 Log in
               </a>
-              <button className="w-full bg-accent-green text-bg-base font-bold text-sm rounded-lg hover:brightness-110 px-5 py-2.5">
+              <button className="w-full bg-accent-green text-bg-base font-semibold text-sm rounded-md hover:brightness-110 px-4 py-2">
                 Get Started
               </button>
             </div>

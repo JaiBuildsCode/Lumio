@@ -28,18 +28,18 @@ export default function HowItWorks() {
         </motion.div>
 
         <div className="relative">
-          {/* Connecting dashed line on desktop */}
-          <div
-            className="hidden lg:block absolute left-0 right-0 h-px"
-            style={{
-              backgroundImage: 'linear-gradient(to right, #4ADE80 0%, #4ADE80 50%, transparent 50%, transparent 100%)',
-              backgroundSize: '12px 1px',
-              top: '32px',
-              zIndex: 0,
-            }}
-          />
+          {/* Connector line with nodes (desktop) */}
+          <div className="hidden lg:block absolute left-0 right-0 top-28 pointer-events-none" style={{ zIndex: 0 }}>
+            <div className="mx-auto max-w-7xl relative">
+              <div className="absolute inset-x-0 top-1/2 h-px bg-border-base/40" />
+              {/* Nodes positioned under each step */}
+              <div className="absolute top-1/2 left-1/6 -translate-y-1/2 w-3 h-3 rounded-full bg-accent-green border border-accent-green/40 shadow-md" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-accent-cyan border border-accent-cyan/40 shadow-md" />
+              <div className="absolute top-1/2 right-1/6 -translate-y-1/2 w-3 h-3 rounded-full bg-accent-gold border border-accent-gold/40 shadow-md" />
+            </div>
+          </div>
 
-          <div className="grid gap-12 lg:grid-cols-3">
+          <div className="grid gap-12 lg:grid-cols-3 relative z-10">
             {steps.map((step, index) => (
               <motion.div
                 key={step.num}

@@ -73,8 +73,9 @@ a {
 
 @layer utilities {
   .dot-grid {
-    background-image: radial-gradient(#1E1E1E 1px, transparent 1px);
-    background-size: 28px 28px;
+    background-image: radial-gradient(rgba(30,30,30,0.35) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.5;
   }
   
   .text-hero {

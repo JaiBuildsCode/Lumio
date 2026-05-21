@@ -1,4 +1,5 @@
 import { motion, useInView } from 'framer-motion'
+import { FiArrowRight } from 'react-icons/fi'
 import { AreaChart, Area, BarChart, Bar, LineChart, Line, ResponsiveContainer, XAxis, YAxis, CartesianGrid } from 'recharts'
 import { FiCheck, FiAlertCircle, FiBarChart2, FiTrendingUp, FiUsers, FiSettings, FiBell } from 'react-icons/fi'
 import { useRef, useState, useEffect } from 'react'
@@ -190,7 +191,7 @@ export default function Hero() {
           </motion.div>
 
           {/* Headline with gradient text */}
-          <h1 className="text-4xl md:text-[88px] mb-6 max-w-4xl leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] mb-6 max-w-4xl leading-tight">
             <motion.span
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -250,15 +251,18 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.6 }}
-            className="flex flex-col gap-4 sm:flex-row sm:justify-center mb-8"
+            className="flex flex-col gap-3 sm:flex-row sm:justify-center mb-6"
           >
-            <button className="rounded-lg bg-accent-green text-bg-base px-8 py-3.5 font-bold transition-all duration-150 hover:brightness-110 hover:scale-105 shadow-glow-green">
-              Start for free →
+            <button className="rounded-lg bg-accent-green text-bg-base px-6 py-3 font-bold transition-all duration-150 hover:brightness-110 hover:scale-105 shadow-glow-green inline-flex items-center gap-2">
+              Start for free
+              <FiArrowRight />
             </button>
-            <button className="rounded-lg border border-border-base text-text-secondary px-8 py-3.5 font-medium transition-all duration-150 hover:border-border-light hover:text-text-primary hover:bg-bg-surface/50">
+            <button className="rounded-lg border border-border-base text-text-secondary px-5 py-3 font-medium transition-all duration-150 hover:border-border-light hover:text-text-primary hover:bg-bg-surface/50 inline-flex items-center gap-2">
               See how it works
             </button>
           </motion.div>
+
+          <p className="text-sm text-text-eyebrow mb-8">No credit card required • 14-day trial</p>
 
           {/* Social proof */}
           <motion.div
